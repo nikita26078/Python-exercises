@@ -1,0 +1,43 @@
+{% extends "app/layout.html" %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+<div class="row row-cols-1 row-cols-md-6 g-4">
+    {% for news in object_list %}
+    <div class="col">
+        <div class="card h-100">
+            <img src="{{ MEDIA_URL }}{{ news.image.url }}" alt="Изображение не загрузилось"
+                 class="card-img-top">
+            <div class="card-body">
+                <a href="/{{news.id}}"><h5> {{news.title}}</h5></a>
+                <p class="card-text">{{news.desc}}</p>
+                <p class="card-text">{{news.date | date:"d-m-Y" }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% block paginated %}
+{% if is_paginated %}
+<div class="pagination">
+    <span class="page-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; В начало</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+        {% endif %}
+
+        <span class="page-current">
+            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Далее</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">В конец &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endif %}
+{% endblock %}
+
+{% endblock %}
+

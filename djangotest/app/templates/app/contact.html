@@ -1,0 +1,20 @@
+{% extends "app/layout.html" %}
+{% block title %}Контакты{% endblock %}
+{% block content %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Контакты</h5>
+        <p class="card-text">Как с нами связаться</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Телефон: <a href="tel:123-12-13" class="card-link">123-12-13</a></li>
+        <li class="list-group-item">Факс: 123-12-13</li>
+        <li class="list-group-item">Skype: <a href="skype:qwerty?call" class="card-link">qwerty</a></li>
+    </ul>
+    <div class="card-body">
+        <a href="mailto:example@mail.ru" class="card-link">Email</a>
+        <a href="mailto:example2@mail.ru" class="card-link">Email2</a>
+    </div>
+</div>
+
+{% endblock %}
