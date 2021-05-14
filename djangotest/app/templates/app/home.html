@@ -1,17 +1,15 @@
 {% extends "app/layout.html" %}
 {% block title %}Главная{% endblock %}
 {% block content %}
-<div class="row row-cols-1 row-cols-md-6 g-4">
+<div class="panel">
     {% for news in object_list %}
-    <div class="col">
-        <div class="card h-100">
-            <img src="{{ MEDIA_URL }}{{ news.image.url }}" alt="Изображение не загрузилось"
-                 class="card-img-top">
-            <div class="card-body">
-                <a href="/{{news.id}}"><h5> {{news.title}}</h5></a>
-                <p class="card-text">{{news.desc}}</p>
-                <p class="card-text">{{news.date | date:"d-m-Y" }}</p>
-            </div>
+    <div class="card h-100 mb-3 ms-3" style="max-width: 18rem;min-width: 18rem;">
+        <img src="{{ MEDIA_URL }}{{ news.image.url }}" alt="Изображение не загрузилось"
+             class="card-img-top">
+        <div class="card-body">
+            <a href="/{{news.id}}"><h5> {{news.title}}</h5></a>
+            <p class="card-text">{{news.desc}}</p>
+            <p class="card-text">{{news.date | date:"d-m-Y" }}</p>
         </div>
     </div>
     {% endfor %}
@@ -19,7 +17,7 @@
 
 {% block paginated %}
 {% if is_paginated %}
-<div class="pagination">
+<div class="pagination justify-content-center">
     <span class="page-links">
         {% if page_obj.has_previous %}
             <a href="?page=1">&laquo; В начало</a>

@@ -86,8 +86,10 @@ def profile(request):
     if request.user.is_anonymous:
         return user_login(request)
     else:
+        ln = len(News.objects.filter(user=request.user.profile.user))
         data = {
             'profile': request.user.profile.user,
+            'posts': ln
         }
         return render(request, 'app/profile.html', data)
 

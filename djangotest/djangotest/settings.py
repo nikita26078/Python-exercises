@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['tech-news-test.herokuapp.com','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'someex',
     'app',
     'django.contrib.admin',
@@ -124,6 +125,18 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
+
+JAZZMIN_SETTINGS = {
+    "topmenu_links": [
+        # Url that gets reversed (Permissions can be added)
+        {"name": "Просмотр сайта",  "url": "index", "permissions": ["auth.view_user"]},
+    ],
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "dark_mode_theme": "darkly",
+    "navbar": "navbar-dark bg-primary"
+}
 
 django_heroku.settings(locals())
 

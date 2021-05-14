@@ -8,7 +8,7 @@ from .models import News, Feedback
 class NewsForm(ModelForm):
     class Meta:
         model = News
-        fields = ['title', 'body', 'desc', 'date', 'user', 'category', 'image']
+        fields = ['title', 'desc', 'body', 'date', 'user', 'category', 'image']
 
         labels = {
             'title': 'Заголовок',
