@@ -1,7 +1,7 @@
 {% extends "app/layout.html" %}
 {% block title %}Отзыв о сайте{% endblock %}
 {% block content %}
-<div class="w-25">
+<div style="max-width: 70rem;min-width: 18rem;">
     <h1>Оставить отзыв</h1>
     <form method="post">
         {% csrf_token %}

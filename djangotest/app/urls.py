@@ -17,4 +17,5 @@ urlpatterns = [
     path('gallery', views.gallery, name='gallery'),
     path('feedback', views.feedback, name='feedback'),
     path('profile', views.profile, name='profile'),
+    path('search', views.search, name='search'),
 ]

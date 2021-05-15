@@ -1,7 +1,7 @@
 {% extends "app/layout.html" %}
 {% block title %}Добавить новость{% endblock %}
 {% block content %}
-<div class="w-25">
+<div style="max-width: 100rem;min-width: 18rem;">
     <h1>Создание новости</h1>
     <form enctype="multipart/form-data" method="post">
         {% csrf_token %}

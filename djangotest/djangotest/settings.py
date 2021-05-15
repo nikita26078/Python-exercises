@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os.path
 import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +27,7 @@ SECRET_KEY = '4^0!8g9t0t0%&#%f5@4@%eik*9+#hh=m4j8b)o!gf5i87=1l3e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tech-news-test.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['tech-news-test.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -118,13 +117,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATIC_URL = '/static/'
 
 JAZZMIN_SETTINGS = {
     "topmenu_links": [

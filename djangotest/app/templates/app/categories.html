@@ -1,7 +1,7 @@
 {% extends "app/layout.html" %}
 {% block title %}Категории{% endblock %}
 {% block content %}
-<ul class="list-group w-25">
+<ul class="list-group" style="max-width: 18rem;min-width: 18rem;">
     {% for cat in object_list %}
     <a href="/category/{{cat.id}}"  class="list-group-item list-group-item-action">{{cat.title}}</a>
     {% endfor %}

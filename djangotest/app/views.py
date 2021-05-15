@@ -37,7 +37,7 @@ class CategoryNewsListView(ListView):
     template_name = 'app/home.html'
 
     def get_queryset(self):
-        self.category = get_object_or_404(Category, category=self.kwargs['category_name'])
+        self.category = get_object_or_404(Category, id=self.kwargs['category_name'])
         return News.objects.filter(category=self.category)
 
     def get_context_data(self, **kwargs):
@@ -124,3 +124,11 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'app/login.html', {'form': form})
+
+
+def search(request):
+    q = request.GET['query']
+    mydictionary = {
+        "object_list": News.objects.filter(title__contains=q)
+    }
+    return render(request, "app/home.html", context=mydictionary)

@@ -1,12 +1,14 @@
 {% extends "app/layout.html" %}
 {% block title %}{{news.title}}{% endblock %}
 {% block content %}
-<div class="w-75">
+<div style="max-width: 100rem;min-width: 18rem;">
     <img src="{{ MEDIA_URL }}{{ news.image.url }}" alt="Изображение не загрузилось">
     <h1> {{news.title}} </h1>
-    <h6>{{news.date|date:"Y-m-d"}}</h6>
-    <p>
-        {{news.body|safe|linebreaks}}
-    </p>
+    <div class="jumbotron">
+        <h6>{{news.date|date:"Y-m-d"}}</h6>
+        <p>
+            {{news.body|safe|linebreaks}}
+        </p>
+    </div>
 </div>
 {% endblock %}
